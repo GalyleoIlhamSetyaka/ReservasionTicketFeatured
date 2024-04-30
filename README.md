@@ -1,6 +1,6 @@
-# aplikasi01
+Aplikasi Reservasi Tiket Kalilo
 
-A new Flutter project.
+Aplikasi peemsanan tiket kalilo
 
 ## Getting Started
 
