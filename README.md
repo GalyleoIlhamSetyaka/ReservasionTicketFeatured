@@ -1,19 +1,8 @@
 ## Aplikasi Reservasi Tiket Kalilo
 
-Aplikasi peemsanan tiket kalilo
+Aplikasi Reservasi Tiket Kalilo dengan fitur Virtual Tour
 
-## Getting Started
+## About
 
-This project is a starting point for a Flutter application.
+Aplikasi ini di buat menggunakan bahasa pemograman flutter, Adanya aplikasi ini untuk membantu para pengelola tiket di tempat wisata Hutan Pinusan Kalilo.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-
-# ReservasionTicketFeatured
-# ReservasionTicketFeatured
