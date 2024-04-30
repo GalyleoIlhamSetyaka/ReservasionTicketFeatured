@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class RiwayatKonfirmasi extends StatelessWidget {
   final List<Map<String, String>> confirmedBookings;
-  final Function(Map<String, String>) onDeletePressed;
+
+  var onDeletePressed;
 
   RiwayatKonfirmasi(
       {required this.confirmedBookings, required this.onDeletePressed});
@@ -33,12 +34,6 @@ class RiwayatKonfirmasi extends StatelessWidget {
                 Text('Jenis Paket: ${bookingData['jenisPaket']}'),
                 Text('Bukti Pembayaran: ${bookingData['buktiPembayaran']}'),
                 SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: () {
-                    onDeletePressed(bookingData);
-                  },
-                  child: Text('Delete'),
-                ),
               ],
             ),
           ),

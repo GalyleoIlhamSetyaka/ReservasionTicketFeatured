@@ -56,6 +56,26 @@ class _FormPageState extends State<FormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Form pemesanan',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+        ),
+        leading: IconButton(
+            icon: Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Main(),
+                ),
+              );
+            }),
+      ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
         child: Form(
@@ -63,13 +83,6 @@ class _FormPageState extends State<FormPage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              IconButton(
-                icon: Icon(Icons.arrow_back),
-                onPressed: () {
-                  Navigator.pushReplacement(
-                      context, MaterialPageRoute(builder: (context) => Main()));
-                },
-              ),
               SizedBox(height: 16.0),
               TextFormField(
                 controller: _controller1,
@@ -126,7 +139,7 @@ class _FormPageState extends State<FormPage> {
                     _selectedPaket = value!;
                   });
                 },
-              ),
+              ), // Gambar QR dan teks "QR Pembayaran"
               SizedBox(height: 16.0),
               TextFormField(
                 controller: _controller4,
@@ -139,6 +152,21 @@ class _FormPageState extends State<FormPage> {
                   ),
                 ),
               ),
+              SizedBox(height: 16.0),
+              Text(
+                'QR Pembayaran',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              SizedBox(height: 8.0),
+              Image.asset(
+                'assets/image/qr.png',
+                height: 200,
+                width: 200,
+              ),
+              SizedBox(height: 16.0),
               SizedBox(height: 32.0),
               Center(
                 child: ElevatedButton(
@@ -177,7 +205,16 @@ class _FormPageState extends State<FormPage> {
                       );
                     }
                   },
-                  child: Text('Submit'),
+                  child: Text(
+                    'Submit',
+                    style: TextStyle(color: Colors.white, fontSize: 14),
+                  ),
+                  style: ElevatedButton.styleFrom(
+                    minimumSize: Size(100, 50),
+                    backgroundColor: Colors.blue,
+                    padding: EdgeInsets.symmetric(horizontal: 13),
+                    textStyle: TextStyle(fontSize: 20),
+                  ),
                 ),
               ),
             ],

@@ -24,7 +24,7 @@ class _Main extends State<Main> {
   final List<Widget> _widgetOptions = [
     Main(),
     PemesananWidget(),
-    MyWebView(url: 'https://app.lapentor.com/sphere/kalilo'),
+    MyWebView(),
     RiwayatScreen(
       purchaseHistory: [],
     ),
@@ -125,7 +125,8 @@ class _Main extends State<Main> {
                                     'Selamat Datang di Aplikasi Kalilo,',
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 30,
                                     ),
                                   ),
                                 ),
@@ -136,8 +137,7 @@ class _Main extends State<Main> {
                                     'Mudahkan pemesanan tiket melalui aplikasi',
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
                                     ),
                                   ),
                                 ),
@@ -155,7 +155,10 @@ class _Main extends State<Main> {
                                 MaterialPageRoute(
                                     builder: (context) => PemesananWidget()));
                           },
-                          child: Text('Pesan Sekarang'),
+                          child: Text(
+                            'Pesan Sekarang',
+                            style: TextStyle(color: Colors.white, fontSize: 14),
+                          ),
                           style: ElevatedButton.styleFrom(
                             minimumSize: Size(70, 30),
                             backgroundColor: Colors.blue,

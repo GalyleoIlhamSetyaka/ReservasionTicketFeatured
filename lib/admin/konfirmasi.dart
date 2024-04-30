@@ -12,7 +12,7 @@ class _KonfirmasiState extends State<Konfirmasi> {
   List<Map<String, String>> _bookings = [];
   List<Map<String, String>> _unconfirmedBookings = [];
   List<Map<String, String>> _confirmedBookings = [];
-
+  late Function(Map<String, String>) onDeletePressed;
   @override
   void initState() {
     super.initState();
@@ -48,7 +48,14 @@ class _KonfirmasiState extends State<Konfirmasi> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('MENU PENGELOLA'),
+        title: Text(
+          'MENU PENGELOLA',
+          style: TextStyle(
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+        ),
       ),
       body: _selectedIndex == 0
           ? _buildKonfirmasiScreen()
@@ -93,11 +100,25 @@ class _KonfirmasiState extends State<Konfirmasi> {
                 Text('Jenis Paket: ${bookingData['jenisPaket']}'),
                 Text('Bukti Pembayaran: ${bookingData['buktiPembayaran']}'),
                 SizedBox(height: 16.0),
-                ElevatedButton(
-                  onPressed: () {
-                    _onKonfirmasiButtonPressed(bookingData);
-                  },
-                  child: Text('Konfirmasi'),
+                Row(
+                  children: [
+                    ElevatedButton(
+                      onPressed: () {
+                        _onKonfirmasiButtonPressed(bookingData);
+                      },
+                      child: Text('Konfirmasi'),
+                    ),
+                    SizedBox(width: 8.0),
+                    IconButton(
+                      icon: Icon(
+                        Icons.delete,
+                        color: Colors.red,
+                      ),
+                      onPressed: () {
+                        _onDeletePressed(bookingData);
+                      },
+                    ),
+                  ],
                 ),
               ],
             ),
